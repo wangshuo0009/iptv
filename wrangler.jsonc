@@ -1,9 +1,0 @@
-{
-  "name": "iptv-worker",
-  "main": "worker.js",
-  "compatibility_date": "2025-08-14",
-  "type": "javascript",
-  "assets": {
-    "directory": "./dist"
-  }
-}
