@@ -1,9 +1,23 @@
 {
+  // Worker 名称
   "name": "iptv-worker",
+
+  // Worker 入口脚本
   "main": "worker.js",
+
+  // Cloudflare Workers 兼容日期
   "compatibility_date": "2025-08-14",
-  "type": "javascript",
-  "assets": {
-    "directory": "./dist"
-  }
+
+  // 自定义域名路由，拦截 /iptv/* 路径
+  "routes": [
+    {
+      "pattern": "iptv.wangshuos.com/iptv/*",
+      "script": "iptv-worker"
+    }
+  ],
+
+  // 可选：如果有静态文件需要直接访问
+  // "assets": {
+  //   "directory": "./dist"
+  // }
 }
