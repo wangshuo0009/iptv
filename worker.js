@@ -10,12 +10,13 @@ export default {
             const fileName = pathname.substring(lastSlash + 1, dotM3u);
 
             // 改写路径到 /iptv/ 目录
-            pathname = `/iptv/${fileName}.m3u`;
+            pathname = '/iptv/${fileName}.m3u';
         }
 
         // 用请求的 host 拼成完整 URL
-        const targetUrl = `${url.protocol}//${url.host}${pathname}`;
-
+        // const targetUrl = '${url.protocol}//${url.host}${pathname}';
+        const targetUrl = 'https://iptv.wangshuos.com' + pathname
+        
         // 发请求并返回，同时设置正确 Content-Type
         const response = await fetch(targetUrl);
         return new Response(response.body, {
