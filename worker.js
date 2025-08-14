@@ -10,7 +10,7 @@ export default {
             const fileName = pathname.substring(lastSlash + 1, dotM3u);
 
             // 改写路径到 /iptv/ 目录
-            pathname = '/iptv/${fileName}.m3u';
+            pathname = '/iptv/'+ fileName +'.m3u';
         }
 
         // 用请求的 host 拼成完整 URL
