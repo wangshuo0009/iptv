@@ -11,7 +11,7 @@
   // 自定义域名路由，拦截 /* 路径
   "routes": [
     {
-      "pattern": "iptv.wangshuos.com/*",
+      "pattern": "iptv.wangshuos.com",
       "custom_domain": true
     }
   ],
