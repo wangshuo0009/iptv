@@ -17,7 +17,7 @@
   ],
 
   // 可选：如果有静态文件需要直接访问
-  // "assets": {
-  //   "directory": "./dist"
-  // }
+   "assets": {
+     "directory": "./dist"
+   }
 }
