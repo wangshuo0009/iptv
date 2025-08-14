@@ -8,11 +8,11 @@
   // Cloudflare Workers 兼容日期
   "compatibility_date": "2025-08-14",
 
-  // 自定义域名路由，拦截 /iptv/* 路径
+  // 自定义域名路由，拦截 /* 路径
   "routes": [
     {
-      "pattern": "iptv.wangshuos.com/iptv/*",
-      "script": "iptv-worker"
+      "pattern": "iptv.wangshuos.com/*",
+      "custom_domain": true
     }
   ],
 
