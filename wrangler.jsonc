@@ -1,6 +1,6 @@
 {
   // Worker 名称
-  "name": "iptv-worker",
+  "name": "iptv",
 
   // Worker 入口脚本
   "main": "worker.js",
