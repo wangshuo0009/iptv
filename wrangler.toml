@@ -1,0 +1,7 @@
+name = "iptv-worker"
+main = "work.js"           # 确认 work.js 实际路径
+type = "javascript"
+compatibility_date = "2025-08-14"
+
+[assets]
+directory = "./dist"       # Vite 构建输出目录
