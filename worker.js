@@ -1,16 +1,25 @@
-export default {
+// worker.js
+var worker_default = {
     async fetch(request, env, ctx) {
-        var endWith = request.url.pathname.endsWith(".m3u");
-        var isFullM3uPath = /^\/iptv\/([^/]+)\.m3u$/.test(request.url.pathname);
+        const url = new URL(request.url)
+        const pathname = url.pathname
+
+        const endWith = pathname.endsWith(".m3u")
+        const isFullM3uPath = /^\/iptv\/([^/]+)\.m3u$/.test(pathname)
+
         if (endWith && !isFullM3uPath) {
-            request.url.pathname = "/iptv" + request.url.pathname;
-            return fetch(request);
+            url.pathname = "/iptv" + pathname
 
-        } else if (request.url.pathname !== '/' && !endWith) {
-            return new Response("Not Found", { status: 404 });
+            const response = fetch(url.origin + url.pathname, request);
+            return new Response(response.body, {
+                status: response.status,
+                headers: { ...response.headers, 'Content-Type': 'audio/x-mpegurl; charset=utf-8' }
+            })
+
+        } else if (pathname !== '/' && !endWith) {
+            return new Response("Not Found", { status: 404 })
         } else {
-            return fetch(request);
+            return fetch(request)
         }
-
     }
 };
