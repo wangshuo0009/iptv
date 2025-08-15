@@ -7,9 +7,7 @@ export default {
             return fetch(request);
 
         } else if (request.url.pathname !== '/' && !endWith) {
-            var response = new Response();
-            response.status = 404
-            return response;
+            return new Response("Not Found", { status: 404 });
         } else {
             return fetch(request);
         }
