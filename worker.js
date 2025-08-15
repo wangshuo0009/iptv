@@ -9,7 +9,7 @@ export default {
         if (endWith && !isFullM3uPath) {
             url.pathname = "/iptv" + pathname
 
-            const response = fetch(url.origin + url.pathname, request);
+            const response = await fetch(url.origin + url.pathname, request);
             return new Response(response.body, {
                 status: response.status,
                 headers: { ...response.headers, 'Content-Type': 'audio/x-mpegurl; charset=utf-8' }
